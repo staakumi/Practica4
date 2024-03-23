@@ -1,0 +1,30 @@
+﻿<Window x:Class="Practica4.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica4"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid VerticalAlignment="Top">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SearchTxt" VerticalAlignment="Center" Grid.ColumnSpan="2" />
+            <Button Content="Поиск" Grid.Column="1" HorizontalAlignment="Right" Click="SearchButtonClick"/>
+        </Grid>
+        <DataGrid x:Name="EmployeesDgr" Visibility="Visible"  VerticalAlignment="Center" />
+        <DataGrid x:Name="ProductsDgr" Visibility="Collapsed"  VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1">
+            <Button Content="Показать сотрудников" Click="ShowEmployees_ClickEF"/>
+            <Button Content="Показать товары" Click="ShowProducts_ClickEF"/>
+        </StackPanel>
+    </Grid>
+</Window>
